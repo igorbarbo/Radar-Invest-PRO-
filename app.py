@@ -1,6 +1,4 @@
-
-# Criar app.py limpo SEM código de escrita de arquivo
-app_py_limpo = '''"""
+"""
 Radar Invest PRO v2.0
 Sistema completo de gestão de carteiras híbridas
 """
@@ -69,7 +67,6 @@ def sidebar():
     st.sidebar.title("🚀 Radar Invest PRO")
     st.sidebar.markdown("---")
     
-    # Menu
     page = st.sidebar.radio(
         "Navegação",
         ["📊 Dashboard", "🎯 Otimização", "⚠️ Risco", "⚙️ Configurações"]
@@ -77,7 +74,6 @@ def sidebar():
     
     st.sidebar.markdown("---")
     
-    # Ações rápidas
     if st.sidebar.button("🔄 Atualizar Preços"):
         atualizar_precos()
         st.sidebar.success("Preços atualizados!")
@@ -89,15 +85,11 @@ def sidebar():
     return page
 
 def page_dashboard():
-    """Página dashboard"""
     atualizar_precos()
     render_dashboard(st.session_state.portfolio)
 
 def page_optimization():
-    """Página otimização"""
     st.subheader("Selecione os ativos para otimização")
-    
-    # Busca dados históricos
     tickers = ["PETR4.SA", "VALE3.SA", "BBAS3.SA", "ITUB4.SA", "WEGE3.SA", 
                "ABEV3.SA", "RENT3.SA", "PRIO3.SA", "IVVB11.SA"]
     
@@ -110,9 +102,7 @@ def page_optimization():
         st.error("Erro ao carregar dados")
 
 def page_risk():
-    """Página risco"""
     st.subheader("Análise de Risco da Carteira")
-    
     tickers = [a.ticker for a in st.session_state.portfolio.ativos]
     
     with st.spinner("Carregando dados..."):
@@ -125,15 +115,11 @@ def page_risk():
         st.error("Erro ao carregar dados")
 
 def page_settings():
-    """Página configurações"""
     st.header("⚙️ Configurações")
-    
     col1, col2 = st.columns(2)
     
     with col1:
         st.subheader("Carteira Atual")
-        
-        # Editor de carteira
         dados = []
         for ativo in st.session_state.portfolio.ativos:
             dados.append({
@@ -142,11 +128,7 @@ def page_settings():
                 'Preço Médio': ativo.preco_medio
             })
         
-        df_edit = st.data_editor(
-            pd.DataFrame(dados),
-            num_rows="dynamic",
-            use_container_width=True
-        )
+        df_edit = st.data_editor(pd.DataFrame(dados), num_rows="dynamic", use_container_width=True)
         
         if st.button("💾 Salvar Carteira"):
             novos_ativos = []
@@ -163,7 +145,6 @@ def page_settings():
     
     with col2:
         st.subheader("Estratégias Pré-configuradas")
-        
         for key, estrategia in ESTRATEGIAS.items():
             with st.expander(f"{estrategia['nome']}"):
                 st.write(estrategia['descricao'])
@@ -171,9 +152,7 @@ def page_settings():
                 st.json(estrategia['alocacao'])
 
 def main():
-    """Função principal"""
     init_session()
-    
     page = sidebar()
     
     if page == "📊 Dashboard":
@@ -186,10 +165,5 @@ def main():
         page_settings()
 
 if __name__ == "__main__":
-    mainbase_path =
-    if __name__ == "__main__":
     main()
     
-
-print("✅ app.py corrigido!")
-print("📝 Removido: código de escrita de arquivo que causava erro")
