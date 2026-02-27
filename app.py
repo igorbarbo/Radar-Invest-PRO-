@@ -186,12 +186,10 @@ def main():
         page_settings()
 
 if __name__ == "__main__":
+    mainbase_path =
+    if __name__ == "__main__":
     main()
-'''
-
-base_path = "/mnt/kimi/output/radar_invest_pro"
-with open(f"{base_path}/app.py", "w") as f:
-    f.write(app_py_limpo)
+    
 
 print("✅ app.py corrigido!")
 print("📝 Removido: código de escrita de arquivo que causava erro")
