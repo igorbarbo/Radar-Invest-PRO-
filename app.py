@@ -1,8 +1,6 @@
 
-# Criar app.py na raiz do projeto (nível do GitHub)
-base_path = "/mnt/kimi/output/radar_invest_pro"
-
-app_py_content = '''"""
+# Criar app.py limpo SEM código de escrita de arquivo
+app_py_limpo = '''"""
 Radar Invest PRO v2.0
 Sistema completo de gestão de carteiras híbridas
 """
@@ -191,10 +189,9 @@ if __name__ == "__main__":
     main()
 '''
 
-# Salvar na raiz
+base_path = "/mnt/kimi/output/radar_invest_pro"
 with open(f"{base_path}/app.py", "w") as f:
-    f.write(app_py_content)
+    f.write(app_py_limpo)
 
-print("✅ app.py criado na raiz!")
-print(f"📍 Local: {base_path}/app.py")
-print(f"📦 Tamanho: {len(app_py_content)} bytes")
+print("✅ app.py corrigido!")
+print("📝 Removido: código de escrita de arquivo que causava erro")
