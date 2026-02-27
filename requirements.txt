@@ -1,6 +1,3 @@
-✅ requirements.txt corrigido!
-
-Conteúdo:
 streamlit>=1.28.0
 yfinance>=0.2.28
 pandas>=2.0.0
